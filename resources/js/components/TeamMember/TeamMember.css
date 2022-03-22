@@ -1,0 +1,38 @@
+.team_member {
+  width: 276px;
+}
+.team_member .img {
+  width: 100%;
+  height: 276px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.team_member .img img {
+  transition: 0.4s;
+}
+.team_member .blue {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.team_member p {
+  margin-bottom: 10px;
+}
+.team_member .in {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  transition: 0.4s;
+  filter: grayscale(100%);
+  /* transform: translateY(50px); */
+  opacity: 0;
+}
+.team_member .in svg {
+  width: 50%;
+}
+.team_member:hover .in {
+  filter: grayscale(0);
+  transform: translateY(0);
+  opacity: 1;
+}

@@ -1,0 +1,76 @@
+.hero {
+  position: relative;
+  padding: 150px 0;
+}
+.hero .view_area {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 63%;
+}
+.hero .content {
+  max-width: 390px;
+}
+.hero .blue {
+  font-size: 40px;
+}
+.hero .op05 {
+  margin: 25px 0;
+}
+.vid_btn {
+  color: #1f7fa0;
+  margin-left: 20px;
+  font-size: 16px;
+}
+.vid_btn .circle {
+  position: relative;
+  width: 67px;
+  height: 67px;
+  border-radius: 50%;
+  border: 2px solid #1f7fa0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: 0.4s;
+}
+.vid_btn .circle::after {
+  width: 77px;
+  height: 77px;
+  border-radius: 50%;
+  border: 1px solid #1f80a033;
+  transition: 0.4s;
+}
+.vid_btn .circle::before {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #1f80a000;
+  transition: 0.4s;
+}
+.vid_btn:hover .circle {
+  border: 2px solid #1f80a049;
+}
+.vid_btn:hover .circle::after {
+  width: 90px;
+  height: 90px;
+  opacity: 0;
+}
+.vid_btn:hover .circle::before {
+  width: 77px;
+  height: 77px;
+  border: 1px solid #1f80a0;
+}
+.vid_btn .circle img {
+  width: 16px;
+}
+.hero .arr_btns {
+  justify-content: flex-start;
+  width: 1600px;
+  margin: auto;
+  transform: translateY(120px);
+}
+.hero .arr_btns button {
+  margin-right: 30px;
+}

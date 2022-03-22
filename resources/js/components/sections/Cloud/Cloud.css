@@ -1,0 +1,18 @@
+#cloud {
+  background: url(/img/tech/bg2.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 150px;
+  text-align: right;
+}
+#cloud .f35 {
+  margin: auto;
+  margin-right: 0;
+  max-width: 456px;
+  margin-bottom: 20px;
+}
+#cloud p {
+  margin: auto;
+  margin-right: 0;
+  max-width: 800px;
+}

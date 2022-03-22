@@ -1,0 +1,48 @@
+.header {
+  padding: 50px 0;
+  background: url(/img/header/bg.png) no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+.header .navbar {
+  margin-left: 300px;
+}
+.header .nav_link {
+  margin: 0 25px;
+  transition: 0.4s;
+}
+.header .nav_link:hover {
+  color: #1f7fa0;
+}
+.header .languages {
+  position: relative;
+  cursor: default;
+  transition: 0.4s;
+}
+.header .languages .on {
+  position: relative;
+}
+.header .languages .on svg {
+  position: absolute;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.header .languages .drop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.header .languages:hover .drop {
+  top: 100%;
+  opacity: 1;
+}
+.header .languages:hover {
+  color: #1f7fa0;
+}
+
+@media screen and (max-width: 1400px) {
+}

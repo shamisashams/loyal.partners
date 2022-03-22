@@ -1,0 +1,40 @@
+#cloud {
+  background: url(/img/tech/bg2.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 150px 0;
+  text-align: right;
+}
+#cloud .f35 {
+  margin: auto;
+  margin-right: 0;
+  max-width: 456px;
+  margin-bottom: 20px;
+}
+#cloud p {
+  margin: auto;
+  margin-right: 0;
+  max-width: 800px;
+}
+
+@media screen and (max-width: 900px) {
+  #cloud {
+    background-position: top;
+    background-size: contain;
+    padding: 125px 0;
+    padding-bottom: 40px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #cloud .f35 {
+    max-width: 269px;
+  }
+  #cloud {
+    padding: 82px 0;
+  }
+}
+@media screen and (max-width: 430px) {
+  #cloud {
+    padding: 19px 0;
+  }
+}

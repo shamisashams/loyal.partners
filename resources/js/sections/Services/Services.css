@@ -1,0 +1,14 @@
+#services {
+  background: url(/img/services/bg.png) no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding-top: 60px;
+}
+#services .grid {
+  display: block;
+  text-align: center;
+}
+#services .f35 {
+  text-align: center;
+  margin-bottom: 30px;
+}

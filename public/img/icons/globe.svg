@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="Icon_feather-globe" data-name="Icon feather-globe" transform="translate(-2 -2)">
+    <path id="Path_1" data-name="Path 1" d="M26,14.5A11.5,11.5,0,1,1,14.5,3,11.5,11.5,0,0,1,26,14.5Z" fill="none" stroke="#4d4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_2" data-name="Path 2" d="M3,18H26" transform="translate(0 -3.5)" fill="none" stroke="#4d4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <path id="Path_3" data-name="Path 3" d="M16.277,3a18.333,18.333,0,0,1,4.277,11.5A18.333,18.333,0,0,1,16.277,26,18.333,18.333,0,0,1,12,14.5,18.333,18.333,0,0,1,16.277,3Z" transform="translate(-1.777)" fill="none" stroke="#4d4e4e" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  </g>
+</svg>

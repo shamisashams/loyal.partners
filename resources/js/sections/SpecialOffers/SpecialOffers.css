@@ -1,0 +1,58 @@
+#special_offers {
+  background: url(/img/spof/SL-120219-25650-11.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 300px 0;
+  margin-top: -250px;
+}
+#special_offers .f35 {
+  text-align: center;
+}
+#special_offers .wrapper {
+  position: relative;
+}
+#special_offers .offer_boxes {
+  position: absolute;
+  left: 0;
+  top: 120px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .spc_box {
+    padding: 17px;
+    margin: 0 11px;
+    margin-bottom: 30px;
+  }
+}
+@media screen and (max-width: 1150px) {
+  #special_offers .offer_boxes {
+    display: block;
+    vertical-align: top;
+    position: relative;
+    top: 55px;
+  }
+  #special_offers {
+    background-position: top;
+    background-size: contain;
+    padding: 188px 0;
+    margin-top: -178px;
+    vertical-align: top;
+  }
+}
+@media screen and (max-width: 900px) {
+  #special_offers {
+    padding: 77px 0;
+    margin-top: -84px;
+  }
+}
+@media screen and (max-width: 420px) {
+  #special_offers {
+    padding: 18px 0;
+    margin-top: 0px;
+  }
+}

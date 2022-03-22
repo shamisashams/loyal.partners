@@ -1,0 +1,49 @@
+#technology {
+  background: url(/img/tech/bg.png) no-repeat;
+  background-position: top;
+  background-size: cover;
+  padding-top: 45px;
+  padding-bottom: 250px;
+}
+#technology .main {
+  align-items: flex-start;
+}
+#technology .left p {
+  max-width: 330px;
+}
+#technology .box {
+  width: 50%;
+  padding: 70px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px #1d1f2931;
+  position: relative;
+  margin-right: -70px;
+  text-align: right;
+}
+#technology .box p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+#technology .box .more {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: 0.4s;
+}
+#technology .box .more.show {
+  max-height: 400px;
+  opacity: 1;
+}
+#technology .box::before {
+  left: -90px;
+  top: 280px;
+  /* background: url(../../../assets/images/tech/triangle.svg) no-repeat; */
+  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  background-color: #fff;
+  width: 100px;
+  height: 100px;
+  box-shadow: -10px 10px 25px #1d1f2948;
+}
+#technology .box .main_button {
+}
