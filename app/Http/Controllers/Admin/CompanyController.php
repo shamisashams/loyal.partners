@@ -89,9 +89,9 @@ class CompanyController extends Controller
 //        dd($saveData);
 
         // Save Files
-//        if ($request->hasFile('images')) {
-//            $company = $this->companyRepository->saveFiles($company->id, $request);
-//        }
+        if ($request->hasFile('images')) {
+            $company = $this->companyRepository->saveFiles($company->id, $request);
+        }
 
         return redirect(locale_route('company.show', $company->id))->with('success', __('admin.create_successfully'));
 
