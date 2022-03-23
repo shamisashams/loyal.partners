@@ -55,9 +55,9 @@ const HeroSection = ({sliders}) => {
                     __html: data.description,
                 }}></p>
                 <div className="flex btnss">
-                  <MainButton
+                  {/* <MainButton
                     text={__("learn_more")}
-                  />
+                  /> */}
                   <button className="vid_btn flex centered">
                     <div className="circle">
                       <img src="/img/icons/arrow.svg" alt="" />
