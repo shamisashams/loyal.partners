@@ -17,7 +17,7 @@ const SpcBox = (props) => {
       <div className="op05">{props.period}</div>
       <p>{props.p1}</p>
       <p>
-        {props.p2}: <span>Free</span> <br /> {props.p3}: <span>Free</span>
+        {props.p2}: <span>{__("free")}</span> <br /> {props.p3}: <span>{__("free")}</span>
       </p>
       <p className={hiddenText ? "hidden_text display" : "hidden_text"}>
         {props.description}

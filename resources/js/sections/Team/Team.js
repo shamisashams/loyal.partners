@@ -102,7 +102,7 @@ const Team = ({team}) => {
     <div id="team">
       <div className="wrapper">
         <div className="f125 bold" data-aos="fade-right">
-          Our team
+            {__("our_team")}
         </div>
         <Slider className="slider" {...settings}>
             {team.map((member, i) => {

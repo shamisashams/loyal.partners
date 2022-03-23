@@ -57,7 +57,7 @@ const Partners = ({companies}) => {
   };
   return (
     <div id="partners">
-      <div className="f35 bold blue">Our partners</div>
+      <div className="f35 bold blue">{__("our_partners")}</div>
       <div className="partner_slide">
         <div className="wrapper">
           <Slider className="slider" {...settings}>
