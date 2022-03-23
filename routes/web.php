@@ -64,7 +64,7 @@ Route::prefix('{locale?}')
                 Route::get('company/{company}/destroy', [CompanyController::class, 'destroy'])->name('company.destroy');
                 // Company
                 Route::resource('team', TeamController::class);
-                Route::get('team/{team}/destroy', [TeamController::class, 'destroy'])->name('company.destroy');
+                Route::get('team/{team}/destroy', [TeamController::class, 'destroy'])->name('team.destroy');
 
                 // Project
 //                Route::resource('project', ProjectController::class);
