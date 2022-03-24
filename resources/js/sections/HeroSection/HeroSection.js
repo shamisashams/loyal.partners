@@ -5,18 +5,6 @@ import "./HeroSection.css";
 
 const HeroSection = ({sliders}) => {
   const [index, setIndex] = useState(0);
-  const heroData = [
-    {
-      img: "/img/hero/1.png",
-      title: "Online Financial Audit Service",
-      para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      img: "/img/services/glass-office-room-wall-mockup.png",
-      title: "Something new is written here",
-      para: "met, consectetLoret, sed do eiusmod orem ipsum dolor sit aur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-  ];
   useEffect(() => {
     const lastIndex = sliders.length - 1;
     if (index < 0) {

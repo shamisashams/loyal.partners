@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import "../../../css/App.css";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import Header from "../../sections/Header/Header";
 import HeroSection from "../../sections/HeroSection/HeroSection";
 import Technology from "../../sections/Technology/Technology";
 import Cloud from "../../sections/Cloud/Cloud";

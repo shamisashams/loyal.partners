@@ -11,7 +11,7 @@ $(document).ready(function () {
         {
           text: 'css',
           children: [
-            { text: 'app.css', icon: 'jstree-file' },
+            { text: 'App.css', icon: 'jstree-file' },
             { text: 'style.css', icon: 'jstree-file' },
           ],
         },
