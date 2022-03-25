@@ -2,109 +2,119 @@ import React, { useState } from "react";
 import Logo from "/img/header/logo.svg";
 import { FB, Globe, IN, YT } from "../../components/Icons/Icons";
 import "./Header.css";
-import {usePage} from "@inertiajs/inertia-react";
+import { usePage } from "@inertiajs/inertia-react";
 
 const Header = () => {
-    const {locales, currentLocale, locale_urls} = usePage().props;
+    const { locales, currentLocale, locale_urls } = usePage().props;
 
     const [mobileMenu, setMobileMenu] = useState(false);
-  const toggleMenu = () => {
-    setMobileMenu(!mobileMenu);
-  };
-  const navbar = [
-    {
-      id: "#technology",
-      name: __("insights"),
-    },
-    {
-      id: "#services",
-      name: __("services"),
-    },
-    {
-      id: "#special_offers",
-      name: __("special_offers"),
-    },
-    {
-      id: "#about_us",
-      name: __("about_us"),
-    },
-    {
-      id: "#team",
-      name: __("career"),
-    },
-    {
-      id: "#footer",
-      name: __("contacts"),
-    },
-  ];
-  return (
-    <div className="header">
-      <div className="wrapper flex">
-        <a href="#" className="logo">
-          <img src="/img/header/logo.svg" alt="" />
-        </a>
-        <div
-          className={mobileMenu ? "mobile_menu flex open" : "mobile_menu flex"}
-        >
-          <div className="navbar">
-            {navbar.map((nav, i) => {
-              return (
-                <a href={nav.id} className="nav_link bold" key={i}>
-                  {nav.name}
+    const toggleMenu = () => {
+        setMobileMenu(!mobileMenu);
+    };
+    const navbar = [
+        {
+            id: "#technology",
+            name: __("insights"),
+        },
+        {
+            id: "#services",
+            name: __("services"),
+        },
+        {
+            id: "#special_offers",
+            name: __("special_offers"),
+        },
+        {
+            id: "#about_us",
+            name: __("about_us"),
+        },
+        {
+            id: "#team",
+            name: __("career"),
+        },
+        {
+            id: "#footer",
+            name: __("contacts"),
+        },
+    ];
+    return (
+        <div className="header">
+            <div className="wrapper flex">
+                <a href="#" className="logo">
+                    <img src="/img/header/logo.svg" alt="" />
                 </a>
-              );
-            })}
-          </div>
-          <div className="languages">
-            <div className="on bold">
-                <Globe color="#4D4E4E" />
-                {Object.keys(locales).map((name, index) => {
-                    if (locales[name] === currentLocale) {
-                        return (
-                            <div >{name}</div>
-                        );
+                <div
+                    className={
+                        mobileMenu
+                            ? "mobile_menu flex open"
+                            : "mobile_menu flex"
                     }
-                })}
-
+                >
+                    <div className="navbar">
+                        {navbar.map((nav, i) => {
+                            return (
+                                <a
+                                    href={nav.id}
+                                    className="nav_link bold"
+                                    key={i}
+                                >
+                                    {nav.name}
+                                </a>
+                            );
+                        })}
+                    </div>
+                    <div className="languages">
+                        <div className="on bold">
+                            <Globe color="#4D4E4E" />
+                            {Object.keys(locales).map((name, index) => {
+                                if (locales[name] === currentLocale) {
+                                    return <div key={index}>{name}</div>;
+                                }
+                            })}
+                        </div>
+                        <div className="drop bold">
+                            {Object.keys(locales).map((name, index) => {
+                                if (locales[name] !== currentLocale) {
+                                    return (
+                                        <a
+                                            href={locale_urls[name]}
+                                            key={name + "locale"}
+                                        >
+                                            {name}
+                                        </a>
+                                    );
+                                }
+                            })}
+                        </div>
+                    </div>
+                    <div className="social_links flex centered">
+                        <a href="#">
+                            <div className="sl flex centered">
+                                <FB color="#1F7FA0" />
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div className="sl flex centered">
+                                <IN color="#1F7FA0" />
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div className="sl flex centered">
+                                <YT color="#1F7FA0" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div
+                    className={mobileMenu ? "menu_btn clicked" : "menu_btn"}
+                    onClick={() => toggleMenu()}
+                >
+                    <div className="span"></div>
+                    <div className="span"></div>
+                </div>
             </div>
-            <div className="drop bold">
-                {Object.keys(locales).map((name, index) => {
-                    if (locales[name] !== currentLocale) {
-                        return (
-                            <a href={locale_urls[name]} key={name + "locale"}>{name}</a>
-                        );
-                    }
-                })}
-            </div>
-          </div>
-          <div className="social_links flex centered">
-            <a href="#">
-              <div className="sl flex centered">
-                <FB color="#1F7FA0" />
-              </div>
-            </a>
-            <a href="#">
-              <div className="sl flex centered">
-                <IN color="#1F7FA0" />
-              </div>
-            </a>
-            <a href="#">
-              <div className="sl flex centered">
-                <YT color="#1F7FA0" />
-              </div>
-            </a>
-          </div>
         </div>
-        <div
-          className={mobileMenu ? "menu_btn clicked" : "menu_btn"}
-          onClick={() => toggleMenu()}
-        >
-          <div className="span"></div>
-          <div className="span"></div>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Header;

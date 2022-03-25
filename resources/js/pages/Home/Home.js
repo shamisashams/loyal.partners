@@ -11,7 +11,6 @@ import SpecialOffers from "../../sections/SpecialOffers/SpecialOffers";
 import AboutUs from "../../sections/AboutUs/AboutUs";
 import Team from "../../sections/Team/Team";
 import Partners from "../../sections/Partners/Partners";
-import Footer from "../../sections/Footer/Footer";
 import Layout from "../../Layouts/Layout";
 
 const Home = ({ sliders,companies,team, seo, page }) => {

@@ -11,10 +11,12 @@
             <div id="button-trigger" class="card card card-default scrollspy">
 
                 <div class="card-content">
-                    <a class="btn-floating btn-large primary-text gradient-shadow compose-email-trigger "
-                       href="{{locale_route('slider.create')}}">
-                        <i class="material-icons">add</i>
-                    </a>
+                    @if(!count($sliders))
+                        <a class="btn-floating btn-large primary-text gradient-shadow compose-email-trigger "
+                           href="{{locale_route('slider.create')}}">
+                            <i class="material-icons">add</i>
+                        </a>
+                    @endif
                     <h4 class="card-title mt-2">@lang('admin.slider')</h4>
                     <div class="row">
                         <div class="col s12">
