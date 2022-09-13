@@ -3950,20 +3950,11 @@ var HeroSection = function HeroSection(_ref) {
       index = _useState2[0],
       setIndex = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
       _useState4 = _slicedToArray(_useState3, 2),
       play = _useState4[0],
       setPlay = _useState4[1];
 
-  var heroData = [{
-    img: "/img/hero/1.png",
-    title: "Online Financial Audit Service",
-    para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  }, {
-    img: "/img/services/glass-office-room-wall-mockup.png",
-    title: "Something new is written here",
-    para: "met, consectetLoret, sed do eiusmod orem ipsum dolor sit aur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  }];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var lastIndex = sliders.length - 1;
 
@@ -3985,35 +3976,41 @@ var HeroSection = function HeroSection(_ref) {
   }, [index]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "hero"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", {
-    className: ""
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "wrapper"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "content"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "bold blue"
-  }, "Online Financial Audit Service"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-    className: "op05" // dangerouslySetInnerHTML={{
-    //     __html: data.description,
-    // }}
-
-  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: play ? "img view_area play" : "img view_area"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_player__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    className: "video",
-    url: "https://www.youtube.com/watch?v=GQ_7XV7w0_c"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-    className: "vid_btn flex centered"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "circle ",
-    onClick: function onClick() {
-      return setPlay(true);
-    }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-    src: "/img/icons/arrow-white.svg",
-    alt: ""
-  }))))));
+  }, sliders.map(function (elem, i) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", {
+      className: "",
+      key: i
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "wrapper"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "content"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "bold blue"
+    }, elem.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+      className: "op05",
+      dangerouslySetInnerHTML: {
+        __html: elem.description
+      }
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: play ? "img view_area play" : "img view_area"
+    }, elem.file && !play ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      src: elem.file ? '/' + elem.file.path + '/' + elem.file.title : ''
+    }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_player__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      playing: true,
+      className: "video",
+      url: elem.youtube_url
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+      className: "vid_btn flex centered"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+      className: "circle ",
+      onClick: function onClick() {
+        return setPlay(true);
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+      src: "/img/icons/arrow-white.svg",
+      alt: ""
+    })))));
+  }));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeroSection);

@@ -6,19 +6,7 @@ import "./HeroSection.css";
 
 const HeroSection = ({ sliders }) => {
     const [index, setIndex] = useState(0);
-    const [play, setPlay] = useState(false);
-    const heroData = [
-        {
-            img: "/img/hero/1.png",
-            title: "Online Financial Audit Service",
-            para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        },
-        {
-            img: "/img/services/glass-office-room-wall-mockup.png",
-            title: "Something new is written here",
-            para: "met, consectetLoret, sed do eiusmod orem ipsum dolor sit aur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        },
-    ];
+    const [play, setPlay] = useState(true);
     useEffect(() => {
         const lastIndex = sliders.length - 1;
         if (index < 0) {
@@ -40,7 +28,44 @@ const HeroSection = ({ sliders }) => {
 
     return (
         <div className="hero">
-            <article className="">
+             {sliders.map((elem, i) => {
+                return (
+                    <article className="" key={i}>
+                        <div className="wrapper">
+                            <div className="content">
+                                <div className="bold blue">
+                                    { elem.title }
+                                </div>
+                                <p
+                                    className="op05"
+                                    dangerouslySetInnerHTML={{
+                                        __html: elem.description,
+                                    }}
+                                >
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className={play ? "img view_area play" : "img view_area"}>
+                            {elem.file && !play ? (
+                                <img src={elem.file?'/'+elem.file.path+'/'+elem.file.title:''} />
+                            ) : null}
+                            <ReactPlayer
+                            playing={true}
+                                className="video"
+                                url={elem.youtube_url}
+                            />
+                            <button className="vid_btn flex centered">
+                                <div className="circle " onClick={() => setPlay(true)}>
+                                    <img src="/img/icons/arrow-white.svg" alt="" />
+                                </div>
+                            </button>
+                        </div>
+                    </article>
+                )
+            })}
+
+{/* <article className="">
                 <div className="wrapper">
                     <div className="content">
                         <div className="bold blue">
@@ -75,7 +100,10 @@ const HeroSection = ({ sliders }) => {
                         </div>
                     </button>
                 </div>
-            </article>
+            </article> */}
+
+
+
         </div>
     );
 };
