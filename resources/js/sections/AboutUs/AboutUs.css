@@ -1,74 +1,75 @@
 #about_us {
-  margin-top: 360px;
+    margin-top: 360px;
+    padding-top: 90px;
 }
 #about_us .wrapper {
-  position: relative;
+    position: relative;
 }
 #about_us .wrapper::before {
-  width: 90%;
-  height: 80px;
-  right: 0;
-  top: 80px;
-  background: linear-gradient(to right, #1c7695, transparent);
-  z-index: -1;
+    width: 90%;
+    height: 80px;
+    right: 0;
+    top: 80px;
+    background: linear-gradient(to right, #1c7695, transparent);
+    z-index: -1;
 }
 #about_us .img {
-  width: 45%;
+    width: 45%;
 }
 #about_us .right {
-  margin-top: 200px;
-  width: 50%;
-  margin-left: 30px;
+    margin-top: 200px;
+    width: 50%;
+    margin-left: 30px;
 }
 #about_us .right .f35 {
-  margin: 10px 0;
-  max-width: 340px;
+    margin: 10px 0;
+    max-width: 340px;
 }
 #about_us .right p {
-  font-size: 14px;
-  margin-bottom: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 1250px) {
-  #about_us .img {
-    width: 50%;
-  }
+    #about_us .img {
+        width: 50%;
+    }
 }
 @media screen and (max-width: 1150px) {
-  #about_us .wrapper {
-    align-items: flex-start;
-  }
-  #about_us {
-    margin-top: -100px;
-  }
-  #about_us .right {
-    margin-top: 0px;
-  }
-  #about_us .wrapper::before {
-    top: -26px;
-  }
+    #about_us .wrapper {
+        align-items: flex-start;
+    }
+    #about_us {
+        margin-top: -100px;
+    }
+    #about_us .right {
+        margin-top: 0px;
+    }
+    #about_us .wrapper::before {
+        top: -26px;
+    }
 }
 @media screen and (max-width: 900px) {
-  #about_us {
-    margin-top: 30px;
-  }
-  #about_us .wrapper {
-    flex-direction: column;
-  }
-  #about_us .img {
-    width: 100%;
-  }
-  #about_us .right {
-    margin-top: 30px;
-    margin-left: 0;
-    width: 100%;
-  }
-  #about_us .wrapper::before {
-    top: -37px;
-  }
+    #about_us {
+        margin-top: 30px;
+    }
+    #about_us .wrapper {
+        flex-direction: column;
+    }
+    #about_us .img {
+        width: 100%;
+    }
+    #about_us .right {
+        margin-top: 30px;
+        margin-left: 0;
+        width: 100%;
+    }
+    #about_us .wrapper::before {
+        top: -37px;
+    }
 }
 @media screen and (max-width: 420px) {
-  #about_us {
-    margin-top: 87px;
-  }
+    #about_us {
+        margin-top: 87px;
+    }
 }
