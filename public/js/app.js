@@ -3996,7 +3996,6 @@ var HeroSection = function HeroSection(_ref) {
     }, elem.file && !play ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: elem.file ? '/' + elem.file.path + '/' + elem.file.title : ''
     }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_player__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      playing: true,
       className: "video",
       url: elem.youtube_url
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {

@@ -51,7 +51,6 @@ const HeroSection = ({ sliders }) => {
                                 <img src={elem.file?'/'+elem.file.path+'/'+elem.file.title:''} />
                             ) : null}
                             <ReactPlayer
-                            playing={true}
                                 className="video"
                                 url={elem.youtube_url}
                             />
