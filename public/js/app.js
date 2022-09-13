@@ -3291,7 +3291,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var _MainButton_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MainButton.css */ "./resources/js/components/MainButton/MainButton.css");
-/* harmony import */ var _img_icons_arrow_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../img/icons/arrow.svg */ "./public/img/icons/arrow.svg");
+/* harmony import */ var _img_icons_arrow_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../img/icons/arrow.svg */ "./public/img/icons/arrow.svg");
 
 
 
@@ -3765,7 +3765,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _img_header_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../img/header/logo.svg */ "./public/img/header/logo.svg");
+/* harmony import */ var _img_header_logo_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../img/header/logo.svg */ "./public/img/header/logo.svg");
 /* harmony import */ var _components_Icons_Icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Icons/Icons */ "./resources/js/components/Icons/Icons.js");
 /* harmony import */ var _Header_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Header.css */ "./resources/js/sections/Header/Header.css");
 /* harmony import */ var _inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
@@ -3795,13 +3795,25 @@ var Header = function Header() {
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      mobileMenu = _useState2[0],
-      setMobileMenu = _useState2[1];
+      scrolled = _useState2[0],
+      setScrolled = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      mobileMenu = _useState4[0],
+      setMobileMenu = _useState4[1];
 
   var toggleMenu = function toggleMenu() {
     setMobileMenu(!mobileMenu);
   };
 
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  });
   var navbar = [{
     id: "#technology",
     name: __("insights")
@@ -3822,7 +3834,7 @@ var Header = function Header() {
     name: __("contacts")
   }];
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-    className: "header"
+    className: "header ".concat(scrolled ? "short" : "")
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "wrapper flex"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", {
@@ -3911,8 +3923,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_player__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-player */ "./node_modules/react-player/lib/index.js");
-/* harmony import */ var _HeroSection_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HeroSection.css */ "./resources/js/sections/HeroSection/HeroSection.css");
-/* harmony import */ var _components_TeamMember_TeamMember__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/TeamMember/TeamMember */ "./resources/js/components/TeamMember/TeamMember.js");
+/* harmony import */ var _components_MainButton_MainButton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/MainButton/MainButton */ "./resources/js/components/MainButton/MainButton.js");
+/* harmony import */ var _HeroSection_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HeroSection.css */ "./resources/js/sections/HeroSection/HeroSection.css");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -3943,6 +3955,15 @@ var HeroSection = function HeroSection(_ref) {
       play = _useState4[0],
       setPlay = _useState4[1];
 
+  var heroData = [{
+    img: "/img/hero/1.png",
+    title: "Online Financial Audit Service",
+    para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  }, {
+    img: "/img/services/glass-office-room-wall-mockup.png",
+    title: "Something new is written here",
+    para: "met, consectetLoret, sed do eiusmod orem ipsum dolor sit aur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  }];
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var lastIndex = sliders.length - 1;
 
@@ -3964,40 +3985,35 @@ var HeroSection = function HeroSection(_ref) {
   }, [index]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     className: "hero"
-  }, sliders.map(function (elem, i) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", {
-      className: "",
-      key: i
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "wrapper"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "content"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "bold blue"
-    }, elem.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-      className: "op05",
-      dangerouslySetInnerHTML: {
-        __html: elem.description
-      }
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: play ? "img view_area play" : "img view_area"
-    }, elem.file && !play ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: elem.file ? '/' + elem.file.path + '/' + elem.file.title : ''
-    }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_player__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      className: "video",
-      url: elem.youtube_url
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
-      className: "vid_btn flex centered"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-      className: "circle ",
-      onClick: function onClick() {
-        return setPlay(true);
-      }
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
-      src: "/img/icons/arrow-white.svg",
-      alt: ""
-    })))));
-  }));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("article", {
+    className: ""
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "wrapper"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "bold blue"
+  }, "Online Financial Audit Service"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
+    className: "op05" // dangerouslySetInnerHTML={{
+    //     __html: data.description,
+    // }}
+
+  }, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: play ? "img view_area play" : "img view_area"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_player__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    className: "video",
+    url: "https://www.youtube.com/watch?v=GQ_7XV7w0_c"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
+    className: "vid_btn flex centered"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "circle ",
+    onClick: function onClick() {
+      return setPlay(true);
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
+    src: "/img/icons/arrow-white.svg",
+    alt: ""
+  }))))));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (HeroSection);
@@ -4905,7 +4921,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".header {\r\n  padding: 50px 0;\r\n  background: url(/img/header/bg.png) no-repeat;\r\n  background-position: top;\r\n  background-size: cover;\r\n  overflow-x: hidden;\r\n}\r\n.header .menu_btn {\r\n  display: none;\r\n}\r\n.header .social_links {\r\n  display: none;\r\n}\r\n.header .navbar {\r\n  margin-right: 213px;\r\n}\r\n.header .nav_link {\r\n  margin: 0 25px;\r\n  transition: 0.4s;\r\n}\r\n.header .nav_link:hover {\r\n  color: #1f7fa0;\r\n}\r\n.header .languages {\r\n  position: relative;\r\n  cursor: default;\r\n  transition: 0.4s;\r\n}\r\n.header .languages .on {\r\n  position: relative;\r\n}\r\n.header .languages .on svg {\r\n  position: absolute;\r\n  left: -30px;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n}\r\n.header .languages .drop {\r\n  position: absolute;\r\n  left: 0;\r\n  top: 0;\r\n  opacity: 0;\r\n  transition: 0.4s;\r\n  cursor: pointer;\r\n}\r\n.header .languages:hover .drop {\r\n  top: 100%;\r\n  opacity: 1;\r\n}\r\n.header .languages:hover {\r\n  color: #1f7fa0;\r\n}\r\n.header .languages svg path {\r\n  transition: 0.4s;\r\n}\r\n.header .languages:hover svg path {\r\n  stroke: #1f7fa0 !important;\r\n}\r\n\r\n@media screen and (max-width: 1400px) {\r\n  .header {\r\n    padding: 30px 0;\r\n    font-size: 14px;\r\n  }\r\n  .header .navbar {\r\n    margin-right: 100px;\r\n  }\r\n}\r\n@media screen and (max-width: 1100px) {\r\n  .header .nav_link {\r\n    margin: 0px 11px;\r\n  }\r\n}\r\n@media screen and (max-width: 930px) {\r\n  .header .menu_btn {\r\n    display: inline-block;\r\n    position: relative;\r\n    z-index: 1100;\r\n    cursor: pointer;\r\n  }\r\n  .header .menu_btn .span {\r\n    width: 36px;\r\n    height: 4px;\r\n    background-color: #1f7fa0;\r\n    margin-bottom: 5px;\r\n    transition: 0.4s;\r\n  }\r\n  .header .menu_btn.clicked .span:first-child {\r\n    transform: rotate(-45deg);\r\n    margin: 0;\r\n  }\r\n  .header .menu_btn.clicked .span:last-child {\r\n    transform: rotate(45deg);\r\n    margin: 0;\r\n    margin-top: -3px;\r\n  }\r\n  .mobile_menu {\r\n    position: fixed;\r\n    top: 0;\r\n    right: -100%;\r\n    width: 100%;\r\n    height: 100vh;\r\n    background-color: #fff;\r\n    flex-direction: column;\r\n    justify-content: center;\r\n    z-index: 1000;\r\n    padding: 80px 20px;\r\n    font-size: 20px;\r\n    transition: 0.4s;\r\n  }\r\n  .mobile_menu.open {\r\n    right: 0;\r\n  }\r\n  .header .navbar {\r\n    margin-right: 0;\r\n    margin-bottom: 50px;\r\n  }\r\n  .mobile_menu .nav_link {\r\n    display: block;\r\n    text-align: center;\r\n    margin-bottom: 20px;\r\n    font-family: \"poppins\";\r\n  }\r\n  .header .languages {\r\n    display: flex;\r\n    margin-bottom: 100px;\r\n  }\r\n  .header .languages svg {\r\n    display: none;\r\n  }\r\n  .header .languages .drop {\r\n    position: relative;\r\n    left: auto;\r\n    top: auto;\r\n    opacity: 0.6;\r\n    transition: 0.4s;\r\n    cursor: pointer;\r\n    margin-left: 15px;\r\n  }\r\n  .header .languages:hover .drop {\r\n    top: auto;\r\n    opacity: 1;\r\n    color: #1f7fa0;\r\n  }\r\n  .header .languages:hover {\r\n    color: unset;\r\n  }\r\n  .header .social_links {\r\n    display: flex;\r\n  }\r\n  .header .sl {\r\n    width: 40px;\r\n    height: 40px;\r\n    background-color: #f4f5fb;\r\n    margin: 0 10px;\r\n  }\r\n}\r\n@media screen and (max-height: 750px) {\r\n  .header .languages {\r\n    margin-bottom: 34px;\r\n  }\r\n  .header .navbar {\r\n    margin-bottom: 13px;\r\n  }\r\n  .mobile_menu .nav_link {\r\n    margin-bottom: 15px;\r\n  }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".header {\r\n    padding: 50px 0;\r\n    background: url(/img/header/bg.png) no-repeat;\r\n    background-position: top;\r\n    background-size: cover;\r\n    overflow-x: hidden;\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 10000;\r\n    transition: 0.5s;\r\n    left: 0;\r\n    top: 0;\r\n}\r\n.header.short {\r\n    padding: 16px 0;\r\n}\r\n.header .menu_btn {\r\n    display: none;\r\n}\r\n.header .social_links {\r\n    display: none;\r\n}\r\n.header .navbar {\r\n    margin-right: 213px;\r\n}\r\n.header .nav_link {\r\n    margin: 0 25px;\r\n    transition: 0.4s;\r\n}\r\n.header .nav_link:hover {\r\n    color: #1f7fa0;\r\n}\r\n.header .languages {\r\n    position: relative;\r\n    cursor: default;\r\n    transition: 0.4s;\r\n}\r\n.header .languages .on {\r\n    position: relative;\r\n}\r\n.header .languages .on svg {\r\n    position: absolute;\r\n    left: -30px;\r\n    top: 50%;\r\n    transform: translateY(-50%);\r\n}\r\n.header .languages .drop {\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    opacity: 0;\r\n    transition: 0.4s;\r\n    cursor: pointer;\r\n}\r\n.header .languages:hover .drop {\r\n    top: 100%;\r\n    opacity: 1;\r\n}\r\n.header .languages:hover {\r\n    color: #1f7fa0;\r\n}\r\n.header .languages svg path {\r\n    transition: 0.4s;\r\n}\r\n.header .languages:hover svg path {\r\n    stroke: #1f7fa0 !important;\r\n}\r\n\r\n@media screen and (max-width: 1400px) {\r\n    .header {\r\n        padding: 30px 0;\r\n        font-size: 14px;\r\n    }\r\n    .header .navbar {\r\n        margin-right: 100px;\r\n    }\r\n}\r\n@media screen and (max-width: 1100px) {\r\n    .header .nav_link {\r\n        margin: 0px 11px;\r\n    }\r\n}\r\n@media screen and (max-width: 930px) {\r\n    .header .menu_btn {\r\n        display: inline-block;\r\n        position: relative;\r\n        z-index: 1100;\r\n        cursor: pointer;\r\n    }\r\n    .header .menu_btn .span {\r\n        width: 36px;\r\n        height: 4px;\r\n        background-color: #1f7fa0;\r\n        margin-bottom: 5px;\r\n        transition: 0.4s;\r\n    }\r\n    .header .menu_btn.clicked .span:first-child {\r\n        transform: rotate(-45deg);\r\n        margin: 0;\r\n    }\r\n    .header .menu_btn.clicked .span:last-child {\r\n        transform: rotate(45deg);\r\n        margin: 0;\r\n        margin-top: -3px;\r\n    }\r\n    .mobile_menu {\r\n        position: fixed;\r\n        top: 0;\r\n        right: -100%;\r\n        width: 100%;\r\n        height: 100vh;\r\n        background-color: #fff;\r\n        flex-direction: column;\r\n        justify-content: center;\r\n        z-index: 1000;\r\n        padding: 80px 20px;\r\n        font-size: 20px;\r\n        transition: 0.4s;\r\n    }\r\n    .mobile_menu.open {\r\n        right: 0;\r\n    }\r\n    .header .navbar {\r\n        margin-right: 0;\r\n        margin-bottom: 50px;\r\n    }\r\n    .mobile_menu .nav_link {\r\n        display: block;\r\n        text-align: center;\r\n        margin-bottom: 20px;\r\n        font-family: \"poppins\";\r\n    }\r\n    .header .languages {\r\n        display: flex;\r\n        margin-bottom: 100px;\r\n    }\r\n    .header .languages svg {\r\n        display: none;\r\n    }\r\n    .header .languages .drop {\r\n        position: relative;\r\n        left: auto;\r\n        top: auto;\r\n        opacity: 0.6;\r\n        transition: 0.4s;\r\n        cursor: pointer;\r\n        margin-left: 15px;\r\n    }\r\n    .header .languages:hover .drop {\r\n        top: auto;\r\n        opacity: 1;\r\n        color: #1f7fa0;\r\n    }\r\n    .header .languages:hover {\r\n        color: unset;\r\n    }\r\n    .header .social_links {\r\n        display: flex;\r\n    }\r\n    .header .sl {\r\n        width: 40px;\r\n        height: 40px;\r\n        background-color: #f4f5fb;\r\n        margin: 0 10px;\r\n    }\r\n}\r\n@media screen and (max-height: 750px) {\r\n    .header .languages {\r\n        margin-bottom: 34px;\r\n    }\r\n    .header .navbar {\r\n        margin-bottom: 13px;\r\n    }\r\n    .mobile_menu .nav_link {\r\n        margin-bottom: 15px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -4929,7 +4945,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".hero {\r\n    position: relative;\r\n    height: 645px;\r\n    overflow-x: hidden;\r\n}\r\n.hero .view_area {\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\r\n    height: 100%;\r\n    width: 63%;\r\n    transition: 2s;\r\n    overflow: hidden;\r\n}\r\n.hero .view_area .video {\r\n    width: 100% !important;\r\n    height: 100% !important;\r\n    position: relative;\r\n}\r\n.hero .view_area .video::before {\r\n    width: 100%;\r\n    height: 100%;\r\n    background-size: cover;\r\n    background-position: center;\r\n    transition: 0.5s;\r\n}\r\n.hero .view_area.play .video::before {\r\n    transform: translateY(-100%);\r\n}\r\n.hero .view_area.play .vid_btn .circle {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n}\r\n.hero .content {\r\n    max-width: 390px;\r\n    padding-top: 100px;\r\n}\r\n.hero .blue {\r\n    font-size: 40px;\r\n}\r\n.hero .op05 {\r\n    margin: 25px 0;\r\n}\r\n.vid_btn {\r\n    color: #1f7fa0;\r\n    margin-left: 20px;\r\n\r\n    font-size: 16px;\r\n}\r\n.vid_btn .circle {\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 50%;\r\n    transform: translate(-50%, -50%);\r\n    width: 67px;\r\n    height: 67px;\r\n    border-radius: 50%;\r\n    border: 2px solid #fff;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    z-index: 100;\r\n    margin-right: 10px;\r\n    transition: 0.4s;\r\n}\r\n.vid_btn .circle::after {\r\n    width: 77px;\r\n    height: 77px;\r\n    border-radius: 50%;\r\n    border: 1px solid rgba(255, 255, 255, 0.308);\r\n    transition: 0.4s;\r\n}\r\n.vid_btn .circle::before {\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 50%;\r\n    border: 1px solid rgba(255, 255, 255, 0);\r\n    transition: 0.4s;\r\n}\r\n.vid_btn:hover .circle {\r\n    border: 2px solid rgba(255, 255, 255, 0.479);\r\n}\r\n.vid_btn:hover .circle::after {\r\n    width: 90px;\r\n    height: 90px;\r\n    opacity: 0;\r\n}\r\n.vid_btn:hover .circle::before {\r\n    width: 77px;\r\n    height: 77px;\r\n    border: 1px solid #fff;\r\n}\r\n.vid_btn .circle img {\r\n    width: 16px;\r\n    height: auto;\r\n}\r\n.hero .arr_btns {\r\n    justify-content: flex-start;\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n    position: absolute;\r\n    bottom: 30px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n}\r\n.hero .arr_btns button {\r\n    margin-right: 30px;\r\n}\r\n.hero article {\r\n    width: 100%;\r\n    height: 100%;\r\n    color: #171c26;\r\n}\r\n\r\n.btnss {\r\n    transition: 1.6s;\r\n    transform: scale(0.6);\r\n}\r\n\r\n@media screen and (max-width: 1200px) {\r\n    .hero .view_area {\r\n        width: 55%;\r\n    }\r\n    .hero {\r\n        height: 518px;\r\n    }\r\n    .hero .content {\r\n        padding-top: 41px;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .hero .view_area {\r\n        width: 100%;\r\n        height: 350px;\r\n    }\r\n    .hero {\r\n        height: 805px;\r\n    }\r\n    .hero .content {\r\n        padding-top: 376px;\r\n    }\r\n    .hero .arr_btns {\r\n        justify-content: flex-end;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .hero .view_area {\r\n        height: 231px;\r\n    }\r\n    .hero {\r\n        height: 601px;\r\n    }\r\n    .hero .content {\r\n        padding-top: 245px;\r\n    }\r\n    .hero .blue {\r\n        font-size: 30px;\r\n    }\r\n    .hero .op05 {\r\n        margin: 15px 0;\r\n    }\r\n    .vid_btn {\r\n        margin-left: 10px;\r\n    }\r\n    .vid_btn .bold {\r\n        display: none;\r\n    }\r\n    .btnss {\r\n        justify-content: flex-start;\r\n    }\r\n    .main_button {\r\n        padding: 22px 26px;\r\n    }\r\n    .hero .arr_btns button {\r\n        margin-left: 17px;\r\n        margin-right: 0;\r\n    }\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".hero {\r\n    position: relative;\r\n    height: 645px;\r\n    overflow-x: hidden;\r\n    margin-top: 158px;\r\n}\r\n.hero .view_area {\r\n    position: absolute;\r\n    right: 0;\r\n    top: 0;\r\n    height: 100%;\r\n    width: 63%;\r\n    transition: 2s;\r\n    overflow: hidden;\r\n}\r\n.hero .view_area .video {\r\n    width: 100% !important;\r\n    height: 100% !important;\r\n    position: relative;\r\n}\r\n.hero .view_area .video::before {\r\n    width: 100%;\r\n    height: 100%;\r\n    background-size: cover;\r\n    background-position: center;\r\n    transition: 0.5s;\r\n}\r\n.hero .view_area.play .video::before {\r\n    transform: translateY(-100%);\r\n}\r\n.hero .view_area.play .vid_btn .circle {\r\n    opacity: 0;\r\n    visibility: hidden;\r\n}\r\n.hero .content {\r\n    max-width: 390px;\r\n    padding-top: 100px;\r\n}\r\n.hero .blue {\r\n    font-size: 40px;\r\n}\r\n.hero .op05 {\r\n    margin: 25px 0;\r\n}\r\n.vid_btn {\r\n    color: #1f7fa0;\r\n    margin-left: 20px;\r\n\r\n    font-size: 16px;\r\n}\r\n.vid_btn .circle {\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 50%;\r\n    transform: translate(-50%, -50%);\r\n    width: 67px;\r\n    height: 67px;\r\n    border-radius: 50%;\r\n    border: 2px solid #fff;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    z-index: 100;\r\n    margin-right: 10px;\r\n    transition: 0.4s;\r\n}\r\n.vid_btn .circle::after {\r\n    width: 77px;\r\n    height: 77px;\r\n    border-radius: 50%;\r\n    border: 1px solid rgba(255, 255, 255, 0.308);\r\n    transition: 0.4s;\r\n}\r\n.vid_btn .circle::before {\r\n    width: 50px;\r\n    height: 50px;\r\n    border-radius: 50%;\r\n    border: 1px solid rgba(255, 255, 255, 0);\r\n    transition: 0.4s;\r\n}\r\n.vid_btn:hover .circle {\r\n    border: 2px solid rgba(255, 255, 255, 0.479);\r\n}\r\n.vid_btn:hover .circle::after {\r\n    width: 90px;\r\n    height: 90px;\r\n    opacity: 0;\r\n}\r\n.vid_btn:hover .circle::before {\r\n    width: 77px;\r\n    height: 77px;\r\n    border: 1px solid #fff;\r\n}\r\n.vid_btn .circle img {\r\n    width: 16px;\r\n    height: auto;\r\n}\r\n.hero .arr_btns {\r\n    justify-content: flex-start;\r\n    height: -webkit-fit-content;\r\n    height: -moz-fit-content;\r\n    height: fit-content;\r\n    position: absolute;\r\n    bottom: 30px;\r\n    left: 50%;\r\n    transform: translateX(-50%);\r\n}\r\n.hero .arr_btns button {\r\n    margin-right: 30px;\r\n}\r\n.hero article {\r\n    width: 100%;\r\n    height: 100%;\r\n    color: #171c26;\r\n}\r\n\r\n.btnss {\r\n    transition: 1.6s;\r\n    transform: scale(0.6);\r\n}\r\n\r\n@media screen and (max-width: 1400px) {\r\n    .hero {\r\n        margin-top: 116px;\r\n    }\r\n}\r\n@media screen and (max-width: 1200px) {\r\n    .hero .view_area {\r\n        width: 55%;\r\n    }\r\n    .hero {\r\n        height: 518px;\r\n    }\r\n    .hero .content {\r\n        padding-top: 41px;\r\n    }\r\n}\r\n@media screen and (max-width: 1000px) {\r\n    .hero .view_area {\r\n        width: 100%;\r\n        height: 350px;\r\n    }\r\n    .hero {\r\n        height: 805px;\r\n    }\r\n    .hero .content {\r\n        padding-top: 376px;\r\n    }\r\n    .hero .arr_btns {\r\n        justify-content: flex-end;\r\n    }\r\n}\r\n@media screen and (max-width: 600px) {\r\n    .hero .view_area {\r\n        height: 231px;\r\n    }\r\n    .hero {\r\n        height: 601px;\r\n    }\r\n    .hero .content {\r\n        padding-top: 245px;\r\n    }\r\n    .hero .blue {\r\n        font-size: 30px;\r\n    }\r\n    .hero .op05 {\r\n        margin: 15px 0;\r\n    }\r\n    .vid_btn {\r\n        margin-left: 10px;\r\n    }\r\n    .vid_btn .bold {\r\n        display: none;\r\n    }\r\n    .btnss {\r\n        justify-content: flex-start;\r\n    }\r\n    .main_button {\r\n        padding: 22px 26px;\r\n    }\r\n    .hero .arr_btns button {\r\n        margin-left: 17px;\r\n        margin-right: 0;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5049,7 +5065,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#technology {\n  /* background: url(/img/tech/bg.png) no-repeat; */\n  background-position: top;\n  background-size: cover;\n  padding-top: 45px;\n  padding-bottom: 250px;\n  overflow-x: hidden;\n}\n#technology .main {\n  align-items: flex-start;\n}\n#technology .left p {\n  max-width: 330px;\n}\n#technology .box {\n  width: 50%;\n  padding: 70px;\n  background-color: #fff;\n  border-radius: 20px;\n  box-shadow: 0 10px 25px #1d1f2931;\n  position: relative;\n  margin-right: -70px;\n  text-align: right;\n}\n#technology .box p {\n  margin-bottom: 20px;\n}\n#technology .content {\n  transition: 0.4s;\n  max-height: 230px;\n  overflow: hidden;\n}\n#technology .main_button {\n  margin-top: 20px;\n}\n#technology .content.more {\n  max-height: 600px;\n}\n#technology .box::before {\n  left: -90px;\n  top: 280px;\n  /* background: url(../../../assets/images/tech/triangle.svg) no-repeat; */\n  -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);\n          clip-path: polygon(100% 0, 0 50%, 100% 100%);\n  background-color: #fff;\n  width: 100px;\n  height: 100px;\n  box-shadow: -10px 10px 25px #1d1f2948;\n}\n#technology .box::after {\n  width: 100%;\n  height: 100%;\n  left: 95%;\n  top: 0;\n  background-color: #fff;\n}\n\n@media screen and (max-width: 1800px) {\n  .f125 {\n    font-size: 88px;\n    margin-left: -38px;\n  }\n  #technology .box {\n    margin-right: 0;\n  }\n}\n@media screen and (max-width: 1100px) {\n  #technology .main {\n    flex-direction: column;\n  }\n  #technology .box::before {\n    right: 40px;\n    top: -80px;\n    left: auto;\n    transform: rotate(90deg);\n    width: 90px;\n    height: 90px;\n  }\n  #technology .left p {\n    max-width: none;\n    margin: 20px 0;\n  }\n  .f125 {\n    font-size: 70px;\n    margin-left: 28px;\n  }\n  #technology .box {\n    width: 100%;\n    padding: 40px;\n    text-align: center;\n  }\n  #technology .box::after {\n    display: none;\n    padding: 22px;\n  }\n}\n@media screen and (max-width: 700px) {\n  #technology .content {\n    font-size: 14px;\n  }\n  #technology .content.more {\n    max-height: 801px;\n  }\n}\n\n@media screen and (max-width: 600px) {\n  #technology {\n    padding-bottom: 59px;\n  }\n\n  #technology .box {\n    padding: 27px;\n    margin-top: 90px;\n  }\n  .f125 {\n    font-size: 40px;\n    margin-left: 0;\n  }\n  .f35 {\n    font-size: 22px;\n  }\n  #technology .box .more.show {\n    max-height: 525px;\n  }\n  #technology .content.more {\n    max-height: 900px;\n  }\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "#technology {\r\n    /* background: url(/img/tech/bg.png) no-repeat; */\r\n    background-position: top;\r\n    background-size: cover;\r\n    padding-top: 45px;\r\n    padding-bottom: 250px;\r\n    overflow-x: hidden;\r\n}\r\n#technology .main {\r\n    align-items: flex-start;\r\n}\r\n#technology .left p {\r\n    max-width: 330px;\r\n}\r\n#technology .box {\r\n    width: 50%;\r\n    padding: 70px;\r\n    background-color: #fff;\r\n    border-radius: 20px;\r\n    box-shadow: 0 10px 25px #1d1f2931;\r\n    position: relative;\r\n    margin-right: -70px;\r\n    text-align: right;\r\n}\r\n#technology .box p {\r\n    margin-bottom: 20px;\r\n}\r\n#technology .content {\r\n    transition: 0.4s;\r\n    max-height: 230px;\r\n    overflow: hidden;\r\n}\r\n#technology .main_button {\r\n    margin-top: 20px;\r\n}\r\n#technology .content.more {\r\n    max-height: 600px;\r\n}\r\n#technology .box::before {\r\n    left: -90px;\r\n    top: 280px;\r\n    /* background: url(../../../assets/images/tech/triangle.svg) no-repeat; */\r\n    -webkit-clip-path: polygon(100% 0, 0 50%, 100% 100%);\r\n            clip-path: polygon(100% 0, 0 50%, 100% 100%);\r\n    background-color: #fff;\r\n    width: 100px;\r\n    height: 100px;\r\n    box-shadow: -10px 10px 25px #1d1f2948;\r\n}\r\n#technology .box::after {\r\n    width: 100%;\r\n    height: 100%;\r\n    left: 95%;\r\n    top: 0;\r\n    background-color: #fff;\r\n}\r\n\r\n@media screen and (max-width: 1800px) {\r\n    .f125 {\r\n        font-size: 88px;\r\n        margin-left: -38px;\r\n    }\r\n    #technology .box {\r\n        margin-right: 0;\r\n    }\r\n}\r\n@media screen and (max-width: 1100px) {\r\n    #technology .main {\r\n        flex-direction: column;\r\n    }\r\n    #technology .box::before {\r\n        right: 40px;\r\n        top: -80px;\r\n        left: auto;\r\n        transform: rotate(90deg);\r\n        width: 90px;\r\n        height: 90px;\r\n    }\r\n    #technology .left p {\r\n        max-width: none;\r\n        margin: 20px 0;\r\n    }\r\n    .f125 {\r\n        font-size: 70px;\r\n        margin-left: 28px;\r\n    }\r\n    #technology .box {\r\n        width: 100%;\r\n        padding: 40px;\r\n        text-align: center;\r\n    }\r\n    #technology .box::after {\r\n        display: none;\r\n        padding: 22px;\r\n    }\r\n}\r\n@media screen and (max-width: 700px) {\r\n    #technology .content {\r\n        font-size: 14px;\r\n    }\r\n    #technology .content.more {\r\n        max-height: 801px;\r\n    }\r\n}\r\n\r\n@media screen and (max-width: 600px) {\r\n    #technology {\r\n        padding-bottom: 59px;\r\n    }\r\n\r\n    #technology .box {\r\n        padding: 27px;\r\n        margin-top: 90px;\r\n    }\r\n    .f125 {\r\n        font-size: 40px;\r\n        margin-left: 0;\r\n    }\r\n    .f35 {\r\n        font-size: 22px;\r\n    }\r\n    #technology .box .more.show {\r\n        max-height: 525px;\r\n    }\r\n    #technology .content.more {\r\n        max-height: 900px;\r\n    }\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -50682,7 +50698,7 @@ webpackContext.id = "./resources/js/pages sync recursive ^\\.\\/.*$";
 /***/ ((module) => {
 
 "use strict";
-module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"Promise based HTTP client for the browser and node.js","main":"index.js","scripts":{"test":"grunt test","start":"node ./sandbox/server.js","build":"NODE_ENV=production grunt build","preversion":"npm test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json","postversion":"git push && git push --tags","examples":"node ./examples/server.js","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","fix":"eslint --fix lib/**/*.js"},"repository":{"type":"git","url":"https://github.com/axios/axios.git"},"keywords":["xhr","http","ajax","promise","node"],"author":"Matt Zabriskie","license":"MIT","bugs":{"url":"https://github.com/axios/axios/issues"},"homepage":"https://axios-http.com","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"jsdelivr":"dist/axios.min.js","unpkg":"dist/axios.min.js","typings":"./index.d.ts","dependencies":{"follow-redirects":"^1.14.0"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}]}');
+module.exports = JSON.parse('{"_args":[["axios@0.21.4","C:\\\\Users\\\\Shamisa\\\\Desktop\\\\local-projects\\\\loyalpartners"]],"_from":"axios@0.21.4","_id":"axios@0.21.4","_inBundle":false,"_integrity":"sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==","_location":"/axios","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"axios@0.21.4","name":"axios","escapedName":"axios","rawSpec":"0.21.4","saveSpec":null,"fetchSpec":"0.21.4"},"_requiredBy":["#DEV:/","/@inertiajs/inertia"],"_resolved":"https://registry.npmjs.org/axios/-/axios-0.21.4.tgz","_spec":"0.21.4","_where":"C:\\\\Users\\\\Shamisa\\\\Desktop\\\\local-projects\\\\loyalpartners","author":{"name":"Matt Zabriskie"},"browser":{"./lib/adapters/http.js":"./lib/adapters/xhr.js"},"bugs":{"url":"https://github.com/axios/axios/issues"},"bundlesize":[{"path":"./dist/axios.min.js","threshold":"5kB"}],"dependencies":{"follow-redirects":"^1.14.0"},"description":"Promise based HTTP client for the browser and node.js","devDependencies":{"coveralls":"^3.0.0","es6-promise":"^4.2.4","grunt":"^1.3.0","grunt-banner":"^0.6.0","grunt-cli":"^1.2.0","grunt-contrib-clean":"^1.1.0","grunt-contrib-watch":"^1.0.0","grunt-eslint":"^23.0.0","grunt-karma":"^4.0.0","grunt-mocha-test":"^0.13.3","grunt-ts":"^6.0.0-beta.19","grunt-webpack":"^4.0.2","istanbul-instrumenter-loader":"^1.0.0","jasmine-core":"^2.4.1","karma":"^6.3.2","karma-chrome-launcher":"^3.1.0","karma-firefox-launcher":"^2.1.0","karma-jasmine":"^1.1.1","karma-jasmine-ajax":"^0.1.13","karma-safari-launcher":"^1.0.0","karma-sauce-launcher":"^4.3.6","karma-sinon":"^1.0.5","karma-sourcemap-loader":"^0.3.8","karma-webpack":"^4.0.2","load-grunt-tasks":"^3.5.2","minimist":"^1.2.0","mocha":"^8.2.1","sinon":"^4.5.0","terser-webpack-plugin":"^4.2.3","typescript":"^4.0.5","url-search-params":"^0.10.0","webpack":"^4.44.2","webpack-dev-server":"^3.11.0"},"homepage":"https://axios-http.com","jsdelivr":"dist/axios.min.js","keywords":["xhr","http","ajax","promise","node"],"license":"MIT","main":"index.js","name":"axios","repository":{"type":"git","url":"git+https://github.com/axios/axios.git"},"scripts":{"build":"NODE_ENV=production grunt build","coveralls":"cat coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js","examples":"node ./examples/server.js","fix":"eslint --fix lib/**/*.js","postversion":"git push && git push --tags","preversion":"npm test","start":"node ./sandbox/server.js","test":"grunt test","version":"npm run build && grunt version && git add -A dist && git add CHANGELOG.md bower.json package.json"},"typings":"./index.d.ts","unpkg":"dist/axios.min.js","version":"0.21.4"}');
 
 /***/ })
 

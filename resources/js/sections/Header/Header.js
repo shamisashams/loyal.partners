@@ -6,11 +6,20 @@ import { usePage } from "@inertiajs/inertia-react";
 
 const Header = () => {
     const { locales, currentLocale, locale_urls } = usePage().props;
+    const [scrolled, setScrolled] = useState(false);
 
     const [mobileMenu, setMobileMenu] = useState(false);
     const toggleMenu = () => {
         setMobileMenu(!mobileMenu);
     };
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    });
     const navbar = [
         {
             id: "#technology",
@@ -38,7 +47,7 @@ const Header = () => {
         },
     ];
     return (
-        <div className="header">
+        <div className={`header ${scrolled ? "short" : ""}`}>
             <div className="wrapper flex">
                 <a href="#" className="logo">
                     <img src="/img/header/logo.svg" alt="" />
@@ -77,12 +86,12 @@ const Header = () => {
                                 if (locales[name] !== currentLocale) {
                                     return (
                                         <li>
-                                        <a
-                                            href={locale_urls[name]}
-                                            key={name + "locale"}
-                                        >
-                                            {name}
-                                        </a>
+                                            <a
+                                                href={locale_urls[name]}
+                                                key={name + "locale"}
+                                            >
+                                                {name}
+                                            </a>
                                         </li>
                                     );
                                 }
