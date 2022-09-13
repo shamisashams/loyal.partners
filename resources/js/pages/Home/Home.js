@@ -13,8 +13,7 @@ import Team from "../../sections/Team/Team";
 import Partners from "../../sections/Partners/Partners";
 import Layout from "../../Layouts/Layout";
 
-const Home = ({ sliders,companies,team, seo, page }) => {
-    console.log(page.file);
+const Home = ({ sliders,companies,team, seo, page,images }) => {
     useEffect(() => {
         Aos.init({ duration: 2000 });
     }, []);
@@ -23,7 +22,7 @@ const Home = ({ sliders,companies,team, seo, page }) => {
             <div>
                 {/*<Header />*/}
                 {sliders.length>0 && <HeroSection sliders={sliders}/>}
-                <Technology page={page} />
+                <Technology page={page} image={images} />
                 <Cloud />
                 <Services />
                 <SpecialOffers />

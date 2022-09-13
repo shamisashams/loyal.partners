@@ -72,20 +72,22 @@ const Header = () => {
                                 }
                             })}
                         </div>
-                        <div className="drop bold">
+                        <ul className="drop bold">
                             {Object.keys(locales).map((name, index) => {
                                 if (locales[name] !== currentLocale) {
                                     return (
+                                        <li>
                                         <a
                                             href={locale_urls[name]}
                                             key={name + "locale"}
                                         >
                                             {name}
                                         </a>
+                                        </li>
                                     );
                                 }
                             })}
-                        </div>
+                        </ul>
                     </div>
                     <div className="social_links flex centered">
                         <a href="#">

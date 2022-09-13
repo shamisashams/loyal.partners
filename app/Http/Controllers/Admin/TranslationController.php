@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Http/Controllers/Admin/TranslationController.php
  *
@@ -6,6 +7,7 @@
  * Time: 09:35
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;

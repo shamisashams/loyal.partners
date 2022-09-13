@@ -1,4 +1,5 @@
 <?php
+
 /**
  *  app/Models/File.php
  *
@@ -6,6 +7,7 @@
  * Time: 09:55
  * @author Vito Makhatadze <vitomaxatadze@gmail.com>
  */
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -28,11 +30,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class File extends Model
 {
-    use HasFactory,softDeletes;
+    use HasFactory, softDeletes;
 
     public const FILE_DEFAULT = 1;
     public const FILE_MAIN_1 = 2;
     public const FILE_MAIN_2 = 3;
+    public const FILE_DOC = 4;
 
     /**
      * The table associated with the model.

@@ -66,4 +66,9 @@ class Page extends Model
     {
         return $this->morphMany(File::class, 'fileable');
     }
+
+    public function sections()
+    {
+        return $this->hasMany(PageSection::class);
+    }
 }

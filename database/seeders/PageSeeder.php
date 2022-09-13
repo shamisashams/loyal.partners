@@ -19,9 +19,9 @@ class PageSeeder extends Seeder
             [
                 'key' => 'home'
             ],
-            [
-                'key' => 'choose_apartment'
-            ],
+            // [
+            //     'key' => 'choose_apartment'
+            // ],
             [
                 'key' => 'about'
             ],
@@ -35,9 +35,9 @@ class PageSeeder extends Seeder
             [
                 'key' => 'contact'
             ],
-            [
-                'key' => 'choose_floor'
-            ]
+            // [
+            //     'key' => 'choose_floor'
+            // ]
 
 
         ];

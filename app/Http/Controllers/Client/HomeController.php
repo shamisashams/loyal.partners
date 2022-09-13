@@ -13,27 +13,35 @@ class HomeController extends Controller
 {
     public function index()
     {
-
-        $page = Page::where('key', 'home')->firstOrFail();
+        $page = Page::where('key', 'home')->with("files")->firstOrFail();
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         $companies = Company::where("status", 1)->with(["file"])->get();
         $team = Team::where("status", 1)->with(["file"])->get();
-
-
+        $images = [];
+        foreach ($page->sections as $sections) {
+            if ($sections->file) {
+                $images[] = asset($sections->file->getFileUrlAttribute());
+            } else {
+                $images[] = null;
+            }
+        }
+        // dd($page->files);
         return Inertia::render('Home/Home', [
             "sliders" => $sliders->get(),
             "companies" => $companies,
             "page" => $page,
             "team" => $team,
+            'images' => $page->files,
             "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
                 "keywords" => $page->meta_keyword,
                 "og_title" => $page->meta_og_title,
                 "og_description" => $page->meta_og_description,
-//            "image" => "imgg",
-//            "locale" => App::getLocale()
-            ]])->withViewData([
+                //            "image" => "imgg",
+                //            "locale" => App::getLocale()
+            ]
+        ])->withViewData([
             'meta_title' => $page->meta_title,
             'meta_description' => $page->meta_description,
             'meta_keyword' => $page->meta_keyword,
@@ -41,10 +49,5 @@ class HomeController extends Controller
             'og_title' => $page->meta_og_title,
             'og_description' => $page->meta_og_description
         ]);
-
     }
-
-
-
-
 }
