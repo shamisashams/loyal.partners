@@ -1,81 +1,82 @@
 #team {
-  margin-bottom: 50px;
+    margin-bottom: 50px;
+    padding-top: 100px;
 }
 #team .wrapper {
-  position: relative;
+    position: relative;
 }
 #team .f125 {
-  margin-bottom: 30px;
-  position: relative;
-  width: fit-content;
+    margin-bottom: 30px;
+    position: relative;
+    width: fit-content;
 }
 #team .f125::after {
-  width: 130px;
-  height: 130px;
-  right: -160px;
-  top: 0;
-  background: url(/img/team/team.png) no-repeat;
-  background-position: center;
-  background-size: contain;
+    width: 130px;
+    height: 130px;
+    right: -160px;
+    top: 0;
+    background: url(/img/team/team.png) no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 #team .slider {
-  width: 80%;
-  margin: auto;
+    width: 80%;
+    margin: auto;
 }
 .slider_arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .slider_arrow.prev {
-  left: -50px;
+    left: -50px;
 }
 .slider_arrow.next {
-  right: -50px;
+    right: -50px;
 }
 .slick-dots li button {
-  background-color: #1c728f56;
-  color: transparent;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
+    background-color: #1c728f56;
+    color: transparent;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
 }
 .slick-dots li button::before {
-  display: none;
+    display: none;
 }
 .slick-dots li.slick-active button {
-  background-color: #1c728f;
+    background-color: #1c728f;
 }
 
 @media screen and (max-width: 1800px) {
-  #team .f125 {
-    margin-bottom: 60px;
-    margin-left: 0;
-  }
+    #team .f125 {
+        margin-bottom: 60px;
+        margin-left: 0;
+    }
 }
 @media screen and (max-width: 1500px) {
-  #team .slider {
-    width: 95%;
-  }
+    #team .slider {
+        width: 95%;
+    }
 }
 @media screen and (max-width: 1100px) {
-  #team .f125::after {
-    width: 80px;
-    height: 80px;
-    right: -102px;
-  }
-  #team .slider_arrow {
-    top: auto;
-    transform: none;
-    bottom: -40px;
-  }
-  #team .slider_arrow.next {
-    right: 0;
-  }
-  #team .slider_arrow.prev {
-    left: 0;
-  }
-  #team .slider {
-    width: 100%;
-  }
+    #team .f125::after {
+        width: 80px;
+        height: 80px;
+        right: -102px;
+    }
+    #team .slider_arrow {
+        top: auto;
+        transform: none;
+        bottom: -40px;
+    }
+    #team .slider_arrow.next {
+        right: 0;
+    }
+    #team .slider_arrow.prev {
+        left: 0;
+    }
+    #team .slider {
+        width: 100%;
+    }
 }
