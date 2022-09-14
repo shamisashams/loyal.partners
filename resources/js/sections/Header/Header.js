@@ -3,6 +3,8 @@ import Logo from "/img/header/logo.svg";
 import { FB, Globe, IN, YT } from "../../components/Icons/Icons";
 import "./Header.css";
 import { usePage } from "@inertiajs/inertia-react";
+import { Route } from "react-router-dom";
+import { Link } from '@inertiajs/inertia-react'
 
 const Header = () => {
     const { locales, currentLocale, locale_urls } = usePage().props;
@@ -49,9 +51,9 @@ const Header = () => {
     return (
         <div className={`header ${scrolled ? "short" : ""}`}>
             <div className="wrapper flex">
-                <a href="#" className="logo">
+                <Link href={route("client.home.index")} className="logo">
                     <img src="/img/header/logo.svg" alt="" />
-                </a>
+                </Link>
                 <div
                     className={
                         mobileMenu
