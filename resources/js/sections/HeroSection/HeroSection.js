@@ -50,10 +50,25 @@ const HeroSection = ({ sliders }) => {
                             {elem.file && !play ? (
                                 <img src={elem.file?'/'+elem.file.path+'/'+elem.file.title:''} />
                             ) : null}
-                            <ReactPlayer
+                            {/* <ReactPlayer
+                              playing={true}
                                 className="video"
-                                url={elem.youtube_url}
-                            />
+                                url={elem.youtube_url+'?autoplay=1&mute=1'}
+                            /> */}
+
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            // src={portfolio[0].video_url}
+                            // src="https://www.youtube.com/embed/28ZbeLWmfiQ?autoplay=1&mute=1"
+                            src={elem.youtube_url+"?autoplay=1&mute=1&controls=0"}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen
+                        ></iframe>
+
+
                             <button className="vid_btn flex centered">
                                 <div className="circle " onClick={() => setPlay(true)}>
                                     <img src="/img/icons/arrow-white.svg" alt="" />

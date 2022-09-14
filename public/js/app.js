@@ -3995,9 +3995,16 @@ var HeroSection = function HeroSection(_ref) {
       className: play ? "img view_area play" : "img view_area"
     }, elem.file && !play ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("img", {
       src: elem.file ? '/' + elem.file.path + '/' + elem.file.title : ''
-    }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_player__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      className: "video",
-      url: elem.youtube_url
+    }) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("iframe", {
+      width: "100%",
+      height: "100%" // src={portfolio[0].video_url}
+      // src="https://www.youtube.com/embed/28ZbeLWmfiQ?autoplay=1&mute=1"
+      ,
+      src: elem.youtube_url + "?autoplay=1&mute=1&controls=0",
+      title: "YouTube video player",
+      frameBorder: "0",
+      allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+      allowFullScreen: true
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("button", {
       className: "vid_btn flex centered"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
