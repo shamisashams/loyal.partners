@@ -51,9 +51,12 @@ const Header = () => {
     return (
         <div className={`header ${scrolled ? "short" : ""}`}>
             <div className="wrapper flex">
-                <Link href={route("client.home.index")} className="logo">
+                {/* <Link href={route("client.home.index")} className="logo">
                     <img src="/img/header/logo.svg" alt="" />
-                </Link>
+                </Link> */}
+                <a href="#" className="logo">
+                <img src="/img/header/logo.svg" alt="" />
+                </a>
                 <div
                     className={
                         mobileMenu
