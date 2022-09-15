@@ -2,14 +2,12 @@ import React, { useState } from "react";
 import { MainButton } from "../../components/MainButton/MainButton";
 import "./Technology.css";
 
-const Technology = ({page, image}) => {
+const Technology = ({page}) => {
   const [moreContent, setMoreContent] = useState(false);
   const toggleContent = () => {
     setMoreContent(!moreContent);
   };
-
   let img = "/img/tech/bg.png";
-
   return (
     <div style={{background: `url(${img}) no-repeat` }} id="technology">
       <div className="wrapper">

@@ -4437,8 +4437,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Technology = function Technology(_ref) {
-  var page = _ref.page,
-      image = _ref.image;
+  var page = _ref.page;
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
