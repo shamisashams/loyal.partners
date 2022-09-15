@@ -4439,7 +4439,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var Technology = function Technology(_ref) {
   var page = _ref.page,
       image = _ref.image;
-  console.log(image[0]);
 
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
@@ -4451,12 +4450,6 @@ var Technology = function Technology(_ref) {
   };
 
   var img = "/img/tech/bg.png";
-
-  if (image[0]) {
-    img = "".concat(image[0].path, "/").concat(image[0].title);
-  } //   let bgimg = `${image[0].path}/${image[0].title}`
-
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
     style: {
       background: "url(".concat(img, ") no-repeat")

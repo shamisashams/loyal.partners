@@ -13,25 +13,18 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $page = Page::where('key', 'home')->with("files")->firstOrFail();
+
+        $page = Page::where('key', 'home')->firstOrFail();
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         $companies = Company::where("status", 1)->with(["file"])->get();
         $team = Team::where("status", 1)->with(["file"])->get();
-        $images = [];
-        foreach ($page->sections as $sections) {
-            if ($sections->file) {
-                $images[] = asset($sections->file->getFileUrlAttribute());
-            } else {
-                $images[] = null;
-            }
-        }
-        // dd($page->files);
+
+
         return Inertia::render('Home/Home', [
             "sliders" => $sliders->get(),
             "companies" => $companies,
             "page" => $page,
             "team" => $team,
-            'images' => $page->files,
             "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,

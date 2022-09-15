@@ -2,7 +2,6 @@ import React from "react";
 import "./AboutUs.css";
 
 const AboutUs = ({img}) => {
-
   return (
     <div id="about_us">
       <div className="wrapper flex">

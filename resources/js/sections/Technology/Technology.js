@@ -3,17 +3,14 @@ import { MainButton } from "../../components/MainButton/MainButton";
 import "./Technology.css";
 
 const Technology = ({page, image}) => {
-    console.log(image[0]);
   const [moreContent, setMoreContent] = useState(false);
   const toggleContent = () => {
     setMoreContent(!moreContent);
   };
 
   let img = "/img/tech/bg.png";
-  if(image[0]){
-   img = `${image[0].path}/${image[0].title}`
-  }
-//   let bgimg = `${image[0].path}/${image[0].title}`
+
+
   return (
     <div style={{background: `url(${img}) no-repeat` }} id="technology">
       <div className="wrapper">
