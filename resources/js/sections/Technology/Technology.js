@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MainButton } from "../../components/MainButton/MainButton";
 import "./Technology.css";
 
-const Technology = ({page}) => {
+const Technology = ({page, images}) => {
   const [moreContent, setMoreContent] = useState(false);
   const toggleContent = () => {
     setMoreContent(!moreContent);

@@ -18,6 +18,14 @@ class HomeController extends Controller
         $sliders = Slider::query()->where("status", 1)->with(['file', 'translations']);
         $companies = Company::where("status", 1)->with(["file"])->get();
         $team = Team::where("status", 1)->with(["file"])->get();
+        $images = [];
+        foreach ($page->sections as $sections) {
+            if ($sections->file) {
+                $images[] = asset($sections->file->getFileUrlAttribute());
+            } else {
+                $images[] = null;
+            }
+        }
 
 
         return Inertia::render('Home/Home', [
@@ -25,6 +33,7 @@ class HomeController extends Controller
             "companies" => $companies,
             "page" => $page,
             "team" => $team,
+            'images' => $page->files,
             "seo" => [
                 "title" => $page->meta_title,
                 "description" => $page->meta_description,
