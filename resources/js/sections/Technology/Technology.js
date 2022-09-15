@@ -10,7 +10,6 @@ const Technology = ({page, image}) => {
 
   let img = "/img/tech/bg.png";
 
-
   return (
     <div style={{background: `url(${img}) no-repeat` }} id="technology">
       <div className="wrapper">
